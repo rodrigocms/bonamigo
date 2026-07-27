@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="pt-PT">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#d4af37">
+    <meta name="description" content="Acesso rápido aos exercícios e vídeos de treino">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="Bonamigo">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 192 192'><rect fill='%231a1a1a' width='192' height='192'/><text x='96' y='120' font-size='100' font-weight='bold' text-anchor='middle' fill='%23d4af37' font-family='Arial'>💪</text></svg>">
+    <title>Acessoria Bonamigo</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💪 Acessoria Bonamigo</h1>
+            <p class="subtitle">Acesso rápido aos exercícios e vídeos</p>
+        </header>
+
+        <div class="tabs">
+            <button class="tab-button active" data-category="força-soltando">
+                Força e Soltando o Jogo
+            </button>
+            <button class="tab-button" data-category="soltando-blindagem">
+                Soltando o Jogo e Blindagem
+            </button>
+        </div>
+
+        <div class="search-bar">
+            <input 
+                type="text" 
+                id="searchInput" 
+                placeholder="🔍 Pesquisar exercício..."
+            >
+        </div>
+
+        <div class="content">
+            <div id="força-soltando" class="tab-content active">
+                <div id="exercicios-força" class="exercicios-grid"></div>
+            </div>
+            <div id="soltando-blindagem" class="tab-content">
+                <div id="exercicios-soltando" class="exercicios-grid"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="data.js"></script>
+    <script src="app.js"></script>
+
+    <!-- Registrar Service Worker para funcionamento offline -->
+    <script>
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('./service-worker.js')
+                    .then(registration => {
+                        console.log('Service Worker registrado com sucesso:', registration);
+                    })
+                    .catch(error => {
+                        console.log('Erro ao registrar Service Worker:', error);
+                    });
+            });
+        }
+    </script>
+</body>
+</html>
