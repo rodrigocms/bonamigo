@@ -20,90 +20,128 @@ document.querySelectorAll('.tab-button').forEach(button => {
 // Search functionality
 document.getElementById('searchInput').addEventListener('input', renderExercicios);
 
+// Escapar HTML para evitar problemas de renderização/segurança
+function escapeHtml(str) {
+    return String(str)
+        .replace(/&/g, '&amp;')
+        .replace(/</g, '&lt;')
+        .replace(/>/g, '&gt;')
+        .replace(/"/g, '&quot;')
+        .replace(/'/g, '&#39;');
+}
+
+// Devolve o link do vídeo; se não existir, faz pesquisa no YouTube pelo nome
+function getVideoUrl(ex) {
+    if (ex.videoUrl && ex.videoUrl.trim() !== '') {
+        return ex.videoUrl;
+    }
+    return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(ex.nome + ' exercício');
+}
+
+// Renderiza um cartão de exercício
+function renderCard(ex) {
+    const videoUrl = getVideoUrl(ex);
+    const temLinkProprio = ex.videoUrl && ex.videoUrl.trim() !== '';
+    return `
+        <div class="exercicio-card">
+            <div class="exercicio-titulo">${escapeHtml(ex.nome)}</div>
+
+            <div class="exercicio-info">
+                ${ex.series ? `
+                    <div class="info-item">
+                        <span class="info-label">📊 Séries:</span>
+                        <span class="info-value">${escapeHtml(ex.series)}</span>
+                    </div>
+                ` : ''}
+
+                ${ex.reps ? `
+                    <div class="info-item">
+                        <span class="info-label">🔄 Reps:</span>
+                        <span class="info-value">${escapeHtml(ex.reps)}</span>
+                    </div>
+                ` : ''}
+
+                ${ex.intervalo && ex.intervalo !== '-' ? `
+                    <div class="info-item">
+                        <span class="info-label">⏱️ Intervalo:</span>
+                        <span class="info-value">${escapeHtml(ex.intervalo)}</span>
+                    </div>
+                ` : ''}
+
+                ${ex.cadencia && ex.cadencia !== '-' ? `
+                    <div class="info-item">
+                        <span class="info-label">🎯 Cadência:</span>
+                        <span class="info-value">${escapeHtml(ex.cadencia)}</span>
+                    </div>
+                ` : ''}
+            </div>
+
+            ${ex.obs ? `
+                <div class="exercicio-comentario">
+                    "${escapeHtml(ex.obs)}"
+                </div>
+            ` : ''}
+
+            <a href="${escapeHtml(videoUrl)}" target="_blank" rel="noopener" class="video-link">
+                ▶️ ${temLinkProprio ? 'Ver Vídeo' : 'Procurar no YouTube'}
+            </a>
+        </div>
+    `;
+}
+
 // Render exercícios
 function renderExercicios() {
     const searchTerm = document.getElementById('searchInput').value.toLowerCase();
     const activeTab = document.querySelector('.tab-content.active');
     const category = activeTab.id;
-    
-    let exercicios = [];
+
+    let grupos = [];
     let containerId = '';
-    
+
     if (category === 'força-soltando') {
-        exercicios = window.dadosForçaSoltando || [];
+        grupos = window.dadosForçaSoltando || [];
         containerId = 'exercicios-força';
     } else if (category === 'soltando-blindagem') {
-        exercicios = window.dadosSoltandoBlindagem || [];
+        grupos = window.dadosSoltandoBlindagem || [];
         containerId = 'exercicios-soltando';
     }
-    
-    // Filter by search term
-    const filtered = exercicios.filter(ex => {
-        const nome = (ex.nome || '').toLowerCase();
-        const comentario = (ex.comentario || '').toLowerCase();
-        return nome.includes(searchTerm) || comentario.includes(searchTerm);
-    });
-    
+
     const container = document.getElementById(containerId);
-    
-    if (filtered.length === 0) {
-        if (searchTerm) {
-            container.innerHTML = `
-                <div class="empty-state" style="grid-column: 1/-1;">
+
+    // Filtra os exercícios dentro de cada grupo (treino)
+    const gruposFiltrados = grupos.map(grupo => {
+        const exerciciosFiltrados = (grupo.exercicios || []).filter(ex => {
+            const nome = (ex.nome || '').toLowerCase();
+            const obs = (ex.obs || '').toLowerCase();
+            return nome.includes(searchTerm) || obs.includes(searchTerm);
+        });
+        return { treino: grupo.treino, exercicios: exerciciosFiltrados };
+    }).filter(grupo => grupo.exercicios.length > 0);
+
+    if (gruposFiltrados.length === 0) {
+        container.innerHTML = searchTerm
+            ? `
+                <div class="empty-state">
                     <h3>Nenhum exercício encontrado</h3>
                     <p>Tente outra busca</p>
                 </div>
-            `;
-        } else {
-            container.innerHTML = `
-                <div class="empty-state" style="grid-column: 1/-1;">
+            `
+            : `
+                <div class="empty-state">
                     <h3>Sem exercícios</h3>
                     <p>Adicione exercícios em data.js</p>
                 </div>
             `;
-        }
         return;
     }
-    
-    container.innerHTML = filtered.map(ex => `
-        <div class="exercicio-card">
-            <div class="exercicio-titulo">${ex.nome}</div>
-            
-            <div class="exercicio-info">
-                ${ex.cargas ? `
-                    <div class="info-item">
-                        <span class="info-label">⚙️ Cargas:</span>
-                        <span class="info-value">${ex.cargas}</span>
-                    </div>
-                ` : ''}
-                
-                ${ex.series ? `
-                    <div class="info-item">
-                        <span class="info-label">📊 Séries:</span>
-                        <span class="info-value">${ex.series}</span>
-                    </div>
-                ` : ''}
-                
-                ${ex.repeticoes ? `
-                    <div class="info-item">
-                        <span class="info-label">🔄 Reps:</span>
-                        <span class="info-value">${ex.repeticoes}</span>
-                    </div>
-                ` : ''}
+
+    container.innerHTML = gruposFiltrados.map(grupo => `
+        <section class="treino-bloco">
+            <h2 class="treino-titulo">${escapeHtml(grupo.treino)}</h2>
+            <div class="exercicios-grid">
+                ${grupo.exercicios.map(renderCard).join('')}
             </div>
-            
-            ${ex.comentario ? `
-                <div class="exercicio-comentario">
-                    "${ex.comentario}"
-                </div>
-            ` : ''}
-            
-            ${ex.videoUrl ? `
-                <a href="${ex.videoUrl}" target="_blank" class="video-link">
-                    ▶️ Ver Vídeo
-                </a>
-            ` : ''}
-        </div>
+        </section>
     `).join('');
 }
 

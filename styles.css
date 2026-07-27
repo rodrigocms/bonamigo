@@ -125,6 +125,25 @@ header h1 {
     }
 }
 
+.treinos-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.treino-bloco {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.treino-titulo {
+    font-size: 1.6em;
+    color: var(--primary-color);
+    padding-bottom: 8px;
+    border-bottom: 2px solid rgba(212, 175, 55, 0.4);
+}
+
 .exercicios-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
