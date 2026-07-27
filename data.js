@@ -22,7 +22,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Aquecimento / mobilidade",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/gQE0xGEgXMw"
             },
             {
                 nome: "Melhor do mundo",
@@ -31,7 +31,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Aquecimento / mobilidade",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/Lx6MTKKy-DY"
             },
             {
                 nome: "Psoas",
@@ -40,7 +40,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Devagar",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/11VMeQ-4jLs"
             },
             {
                 nome: "90/90 com intenção",
@@ -49,7 +49,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Mobilidade de quadril",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/adejAn52XAk"
             },
             {
                 nome: "Cócoras",
@@ -58,7 +58,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Mobilidade",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/ubv8v15cRvU"
             },
             {
                 nome: "Estabilidade de Joelho - ISO",
@@ -67,7 +67,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "Isometria",
                 obs: "Cada perna",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/nzFnA2bJwRo"
             },
             {
                 nome: "Pallof press",
@@ -76,7 +76,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Anti-rotação",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/w3da-JttkXs"
             },
             {
                 nome: "Agachamento Goblet",
@@ -85,7 +85,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60-90s",
                 cadencia: "4.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "Progressão de cadência ao longo das 6 semanas",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/vsKlU7Nm8K4"
             },
             {
                 nome: "Remada curvada",
@@ -94,7 +94,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60-90s",
                 cadencia: "3.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "Realizar com halter",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/QQs8cp_UD64"
             },
             {
                 nome: "Supino reto com halter",
@@ -103,7 +103,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60-90s",
                 cadencia: "4.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "4 séries a partir da semana 6",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/aCA4yTctuyg"
             },
             {
                 nome: "Afundo peso corporal",
@@ -112,7 +112,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60s",
                 cadencia: "4.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "4 séries a partir da semana 6",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/jgTxBaFwu64"
             }
         ]
     },
@@ -126,7 +126,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Aquecimento / mobilidade",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/11VMeQ-4jLs"
             },
             {
                 nome: "Mobilidade de Quadril 90/90",
@@ -135,7 +135,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Devagar",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/adejAn52XAk"
             },
             {
                 nome: "Volta ao mundo",
@@ -144,7 +144,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Aquecimento / mobilidade",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/gQE0xGEgXMw"
             },
             {
                 nome: "Melhor do Mundo",
@@ -153,7 +153,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Devagar",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/Lx6MTKKy-DY"
             },
             {
                 nome: "SL Squat - Estabilidade",
@@ -162,7 +162,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Agachamento unilateral com foco em estabilidade",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/hmwCN5UN_-M"
             },
             {
                 nome: "Prancha tocando ombros",
@@ -171,7 +171,7 @@ window.dadosForçaSoltando = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Anti-rotação / core",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/Hl2tu2jvcKA"
             },
             {
                 nome: "Stiff unilateral",
@@ -180,7 +180,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60-90s",
                 cadencia: "4.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "Progressão de cadência ao longo das 6 semanas",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/-6HbsLhUARg"
             },
             {
                 nome: "Serrote",
@@ -189,7 +189,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60-90s",
                 cadencia: "4.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "Remada unilateral com halter",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/egoX7nD8m1o"
             },
             {
                 nome: "Z Press light",
@@ -198,7 +198,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60-90s",
                 cadencia: "4.0.0.0 → 6.0.0.0 → 4.0.X.0",
                 obs: "4 séries a partir da semana 6",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/FFlcyns1TKA"
             },
             {
                 nome: "Copenhagen Plank",
@@ -207,7 +207,7 @@ window.dadosForçaSoltando = [
                 intervalo: "60seg",
                 cadencia: "ISO",
                 obs: "Cada perna. 4 séries a partir da semana 6",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/rphXPW5eepI"
             }
         ]
     }
@@ -227,7 +227,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "30seg",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/11VMeQ-4jLs"
             },
             {
                 nome: "Frog Stretch",
@@ -236,7 +236,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "20seg",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/BmarkDRrYcg"
             },
             {
                 nome: "Mobilidade de flexão e extensão de quadril",
@@ -245,7 +245,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "8x para a frente e para trás, máxima amplitude",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/QK_sCtsgDpE"
             },
             {
                 nome: "Pescador para Alcance",
@@ -254,7 +254,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Ficar 5seg na posição crítica",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/TIkE3ser4Pc"
             },
             {
                 nome: "Cócoras",
@@ -263,7 +263,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/ubv8v15cRvU"
             },
             {
                 nome: "Extensão e alinhamento cervical",
@@ -272,7 +272,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "15seg",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/kGKbdax8yuU"
             },
             {
                 nome: "Alongamento extensores de punho",
@@ -281,7 +281,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/4e-qFQiIA14"
             },
             {
                 nome: "Fortalecimento de ombro - RE",
@@ -290,7 +290,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Rotação externa",
-                videoUrl: ""
+                videoUrl: "https://youtube.com/shorts/moSvYHiIz-Q"
             },
             {
                 nome: "Melhor do mundo",
@@ -299,7 +299,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/EwAeBOEo5cM"
             },
             {
                 nome: "Mobilidade Y",
@@ -308,7 +308,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "Fazer com pressão e consciência",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/QD3ee0On3V4"
             },
             {
                 nome: "Cobra pose",
@@ -317,7 +317,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/xAjjpYvFR3w"
             },
             {
                 nome: "Torção de tronco sobre o ombro",
@@ -326,7 +326,7 @@ window.dadosSoltandoBlindagem = [
                 intervalo: "-",
                 cadencia: "-",
                 obs: "",
-                videoUrl: ""
+                videoUrl: "https://youtu.be/nTboQrgmT0E"
             }
         ]
     }

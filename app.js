@@ -38,13 +38,43 @@ function getVideoUrl(ex) {
     return 'https://www.youtube.com/results?search_query=' + encodeURIComponent(ex.nome + ' exercício');
 }
 
+// Extrai o ID do vídeo do YouTube a partir do link (youtu.be, /shorts/ ou watch?v=)
+function getYouTubeId(url) {
+    if (!url) return '';
+    const patterns = [
+        /youtu\.be\/([A-Za-z0-9_-]{6,})/,
+        /youtube\.com\/shorts\/([A-Za-z0-9_-]{6,})/,
+        /[?&]v=([A-Za-z0-9_-]{6,})/,
+        /youtube\.com\/embed\/([A-Za-z0-9_-]{6,})/
+    ];
+    for (const p of patterns) {
+        const m = url.match(p);
+        if (m) return m[1];
+    }
+    return '';
+}
+
+// Devolve a URL da miniatura do vídeo (ou '' se não houver ID)
+function getThumbUrl(url) {
+    const id = getYouTubeId(url);
+    return id ? `https://img.youtube.com/vi/${id}/hqdefault.jpg` : '';
+}
+
 // Renderiza um cartão de exercício
 function renderCard(ex) {
     const videoUrl = getVideoUrl(ex);
     const temLinkProprio = ex.videoUrl && ex.videoUrl.trim() !== '';
+    const thumbUrl = getThumbUrl(videoUrl);
     return `
         <div class="exercicio-card">
             <div class="exercicio-titulo">${escapeHtml(ex.nome)}</div>
+
+            ${thumbUrl ? `
+                <a href="${escapeHtml(videoUrl)}" target="_blank" rel="noopener" class="video-thumb">
+                    <img src="${escapeHtml(thumbUrl)}" alt="Vídeo: ${escapeHtml(ex.nome)}" loading="lazy">
+                    <span class="video-thumb-play">▶️</span>
+                </a>
+            ` : ''}
 
             <div class="exercicio-info">
                 ${ex.series ? `

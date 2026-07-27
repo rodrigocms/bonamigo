@@ -175,6 +175,37 @@ header h1 {
     margin-bottom: 10px;
 }
 
+.video-thumb {
+    position: relative;
+    display: block;
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+    background: #000;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.video-thumb:hover img {
+    transform: scale(1.05);
+}
+
+.video-thumb-play {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2.5em;
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.6));
+    pointer-events: none;
+}
+
 .exercicio-info {
     display: flex;
     flex-direction: column;
